@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="DbMigration/DbMigration.csproj" Id="78cd7d5b-0a6f-4de3-9557-e1c878669a0e" />
+  <Project Path="FollowingApi/FollowingApi.csproj" Id="34ee20fb-6c0d-478f-b54a-6774096ada92" />
+  <Project Path="FollowingBl/FollowingBl.csproj" Id="42554557-7641-4907-8e32-d75e157fef9f" />
+  <Project Path="FollowingDal/FollowingDal.csproj" Id="2f2a3069-2b9b-4808-af30-32be7dc762ca" />
+  <Project Path="FollowingTest/FollowingTest.csproj" Id="5e8c12c2-dbef-4390-afef-9438ae2b7399" />
+</Solution>
