@@ -69,3 +69,5 @@ obj/
 
 /FollowingApi/appsettings.Development.json
 /FollowingApi/appsettings.json
+/DbMigration/appsettings.Development.json
+/DbMigration/appsettings.json
