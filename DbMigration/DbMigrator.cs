@@ -14,7 +14,6 @@ public sealed class DbMigrator(string connectionString)
 
             var upgrader = DeployChanges.To
                 .SqlDatabase(connectionString)
-                // מחפש סקריפטים שסומנו כ-Embedded Resource בתוך הפרויקט הזה
                 .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
                 .WithTransactionPerScript() // מבטיח שכל סקריפט ירוץ בטרנזקציה (הכל או כלום)
                 .LogToConsole()
