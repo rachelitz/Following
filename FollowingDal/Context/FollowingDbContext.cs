@@ -20,16 +20,13 @@ public partial class FollowingDBContext : DbContext
 
     public virtual DbSet<BusinessCustomer> BusinessCustomers { get; set; }
 
+    public virtual DbSet<Category> Categories { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Airline>(entity =>
         {
             entity.HasKey(e => e.CompanyCode).HasName("PK_tbl_airline");
-        });
-
-        modelBuilder.Entity<BusCompany>(entity =>
-        {
-            entity.HasKey(e => e.CompanyCode).HasName("PK_tbl_busCompany");
         });
 
         modelBuilder.Entity<BusesCost>(entity =>
