@@ -1,0 +1,17 @@
+USE [Following]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Country](
+	[CountryCode] [int] IDENTITY(1,1) NOT NULL,
+	[CountryNameHebrew] [nvarchar](50) NULL,
+	[CountryNameEnglish] [nvarchar](50) NULL,
+ CONSTRAINT [PK_tbl_country] PRIMARY KEY CLUSTERED 
+(
+	[CountryCode] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
