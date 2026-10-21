@@ -1,23 +1,14 @@
 ﻿using FollowingBl.Dto;
 using FollowingDal.Model;
 using FollowingDal.Repository;
-using System;
-using System.Diagnostics.Metrics;
 
 namespace FollowingBl.Services
 {
-    public class CountryService
+    public class CountryService(CountryRepository repository)
     {
-        private readonly CountryRepository _repository;
-
-        public CountryService(CountryRepository repository)
-        {
-            _repository = repository;
-        }
-
         public async Task<List<CountryDto>> GetAllCountriesAsync()
         {
-            var countries = await _repository.GetAllCountryAsync();
+            var countries = await repository.GetAllCountryAsync();
 
             return countries.Select(c => new CountryDto
             {
@@ -29,7 +20,7 @@ namespace FollowingBl.Services
 
         public async Task<List<CityDto>> GetAllCitiesAsync()
         {
-            var cities = await _repository.GetAllCityAsync();
+            var cities = await repository.GetAllCityAsync();
 
             return cities.Select(c => new CityDto
             {
@@ -49,7 +40,7 @@ namespace FollowingBl.Services
                 CityNameEnglish = cityDto.CityNameEnglish
             };
 
-            var result = await _repository.AddCityAsync(city);
+            var result = await repository.AddCityAsync(city);
             cityDto.CityCode = result.CityCode;
             return cityDto;
         }
@@ -62,7 +53,7 @@ namespace FollowingBl.Services
                 CountryNameEnglish = countryDto.CountryNameEnglish
             };
 
-            var result = await _repository.AddCountryAsync(country);
+            var result = await repository.AddCountryAsync(country);
             countryDto.CountryCode = result.CountryCode;
             return countryDto;
         }
